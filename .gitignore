@@ -1,0 +1,12 @@
+.idea/
+*.iml
+__pycache__/
+venv/
+build/
+dist/
+bin/
+pytess/
+.coverage
+*.spec
+*.sfc
+*.zip
