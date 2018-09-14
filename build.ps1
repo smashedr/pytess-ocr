@@ -18,5 +18,4 @@ pyinstaller.exe --clean --console --onefile --icon=icon.ico ".\pytess.py"
 Rename-Item -Path ".\dist" -NewName ".\pytess"
 Copy-Item ".\bin" -Destination ".\pytess\bin" -Recurse
 Copy-Item ".\readme.txt" -Destination ".\pytess\readme.txt"
-Copy-Item ".\settings.ini" -Destination ".\pytess\settings.ini"
 7z.exe a ".\pytess.zip" ".\pytess"
