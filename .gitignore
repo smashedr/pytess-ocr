@@ -7,6 +7,5 @@ dist/
 bin/
 pytess/
 .coverage
-*.spec
 *.sfc
 *.zip

@@ -13,9 +13,10 @@ if((Test-Path -Path ".\dist" )) {Remove-Item ".\dist" -Recurse -Force}
 if((Test-Path -Path ".\__pycache__" )) {Remove-Item ".\__pycache__" -Recurse -Force}
 if((Test-Path -Path ".\pytess.zip" )) {Remove-Item ".\pytess.zip"  -Force}
 
-pyinstaller.exe --clean --console --onefile --icon=icon.ico ".\pytess.py"
+pyinstaller.exe --clean --console --onefile ".\pytess.spec"
+if ( ! $lastExitCode -eq 0 ) { Throw "Error running pyinstaller.exe" }
 
 Rename-Item -Path ".\dist" -NewName ".\pytess"
-Copy-Item ".\bin" -Destination ".\pytess\bin" -Recurse
 Copy-Item ".\readme.txt" -Destination ".\pytess\readme.txt"
 7z.exe a ".\pytess.zip" ".\pytess"
+if ( ! $lastExitCode -eq 0 ) { Throw "Error running 7z.exe" }
